@@ -5,4 +5,4 @@ max="$(cat "/sys/class/backlight/intel_backlight/max_brightness")"
 
 new=$(($old+20))
 
-sudo sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"
+sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"
