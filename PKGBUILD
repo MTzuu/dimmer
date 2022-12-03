@@ -10,8 +10,8 @@ depends=('bash')
 source=("brightness_up"
         "brightness_down")
 noextract=()
-md5sums=("3ae191cbfd134f817be8426f1ae6353d"
-         "99d59290a69f129f6bff6ed4a4bf0ec8")
+md5sums=("SKIP"
+         "SKIP")
 
 package() {
   local installopts='--mode 0755 -D --target-directory'

@@ -3,6 +3,11 @@
 old="$(cat "/sys/class/backlight/intel_backlight/brightness")"
 max="$(cat "/sys/class/backlight/intel_backlight/max_brightness")"
 
-new=$(($old+20))
+new=$(($old+400))
+
+if [ $new -gt $max ];
+then
+  new=$max
+fi
 
 sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"

@@ -1,8 +1,13 @@
 #!/bin/bash
 
 old="$(cat "/sys/class/backlight/intel_backlight/brightness")"
-max="$(cat "/sys/class/backlight/intel_backlight/max_brightness")"
+min=1
 
-new=$(($old-20))
+new=$(($old-400))
+
+if [ $new -lt $min ];
+then
+  new=$min;
+fi
 
 sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"
